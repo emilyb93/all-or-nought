@@ -3,7 +3,9 @@ body {
 }
 
 .grid {
-
+     display: grid;
+     grid-template-columns: 1fr;
+     grid-template-rows: 1fr 1fr 1fr;
 }
 
 button {
@@ -11,4 +13,6 @@ button {
      height: 100px;
      padding: 5px;
      margin: 5px;
+   
+
 }

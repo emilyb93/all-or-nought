@@ -4,38 +4,45 @@ let gameWon = false;
 function setPiece(btn) {
   const currentBtn = document.getElementById(btn);
   const coords = btn.split("-");
-  currentBtn.innerText = currentUser;
 
-  const diag1Values = Object.values(document.getElementsByClassName("d1")).map(
-    (currentPos) => currentPos.innerText
-  );
+  if (currentBtn.innerText === "-") {
+    currentBtn.innerText = currentUser;
 
-  const diag2Values = Object.values(document.getElementsByClassName("d2")).map(
-    (currentPos) => currentPos.innerText
-  );
+    const diag1Values = Object.values(
+      document.getElementsByClassName("d1")
+    ).map((currentPos) => currentPos.innerText);
 
-  const rowValues = Object.values(document.getElementsByClassName(`r${coords[0]}`)).map(
-    (currentPos) => currentPos.innerText
-  );
-  //   console.log(rowValues);
+    const diag2Values = Object.values(
+      document.getElementsByClassName("d2")
+    ).map((currentPos) => currentPos.innerText);
 
-  const columnValues = Object.values(
-    document.getElementsByClassName(`c${coords[1]}`)
-  ).map((currentPos) => currentPos.innerText);
-  //   console.log(columnValues);
+    const rowValues = Object.values(
+      document.getElementsByClassName(`r${coords[0]}`)
+    ).map((currentPos) => currentPos.innerText);
+    //   console.log(rowValues);
 
-  const allValues = [rowValues, columnValues, diag1Values, diag2Values];
+    const columnValues = Object.values(
+      document.getElementsByClassName(`c${coords[1]}`)
+    ).map((currentPos) => currentPos.innerText);
+    //   console.log(columnValues);
 
-  allValues.forEach((array) => {
-    if (array.every((currentValue) => currentValue === currentUser)) {
-      gameWon = true;
+    const allValues = [rowValues, columnValues, diag1Values, diag2Values];
+
+    allValues.forEach((array) => {
+      if (array.every((currentValue) => currentValue === currentUser)) {
+        gameWon = true;
+      }
+    });
+
+    if (gameWon === true) {
+      const winningText = document.getElementById("winningText");
+      winningText.innerText = `${currentUser} Wins!`;
     }
-  });
 
-  if (gameWon === true) {
-    const winningText = document.getElementById("winningText");
-    winningText.innerText = `${currentUser} Wins!`;
+    currentUser === "X" ? (currentUser = "O") : (currentUser = "X");
   }
-
-  currentUser === "X" ? (currentUser = "O") : (currentUser = "X");
 }
+
+// reset function
+
+//track function
