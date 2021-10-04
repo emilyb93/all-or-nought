@@ -1,8 +1,20 @@
+@import"./node_modules/animate.css/animate.css";
+
 body {
   text-align: center;
-  background-color: deepskyblue;
+  background-color: #A7C7E7;
+  animation-name: "fadeInDown";
+  animation-duration: 3s;
 }
 
+
+h1{
+  color: rgb(0, 0, 0);
+  text-shadow: -1px 1px white;
+  /* text-shadow: 2px -2px black; */
+  font-size: 40px;
+  font-family: monospace;
+}
 button {
   width: 100px;
   height: 100px;
@@ -18,7 +30,7 @@ table {
 }
 
 td {
-  width: 33px;
+  width: 100px;
 }
 
 .stats-bar {
@@ -34,6 +46,8 @@ ul {
   font-size: 30px;
   color: white;
   text-shadow: -2px 2px black;
+  box-shadow: -2px 1px rgb(69, 68, 68);
+  
 }
 
 .game-button:hover {
@@ -43,7 +57,7 @@ ul {
 #reset {
   height: 50px;
   width: 100px;
-  background-color: #ff1954;
+  background-color: #FF5733;
   color: white;
   font-size: 20px;
   box-shadow: -2px 2px black;
@@ -58,3 +72,108 @@ ul {
 .grid {
   min-width: 400px;
 }
+
+.stats-bar{
+  background-color: rgb(224, 230, 227);
+  border-radius: 4px;
+  width: 330px;
+  font-size: 30px;
+  border: 2px solid black;
+}
+
+.clicked{
+  background-color: black ;
+}
+
+.x-cursor{
+  cursor: url("./cursors/x-cursor.png"), auto;
+}
+
+.o-cursor{
+  cursor: url("./cursors/o-cursor.png"), auto;
+}
+
+
+
+#current-player{
+  background-color: #A7C7E7;
+  height: 30px;
+  width: 70px;
+  border: 2px solid black;
+  border-radius: 50%;
+  
+}
+
+.winning{
+  background-color: #900C3F;
+  animation: flashing 2s infinite;
+
+}
+
+@keyframes flashing {
+  0%{
+    background: #900C3F;
+
+  }
+
+  50%{
+    background: #581845;
+  }
+
+  100%{
+    background: #900C3F;
+
+  }
+}
+
+#winningText{
+  
+  animation: text-scroll 1s infinite;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -15vh;
+}
+
+#winning-text-div{
+ 
+  align-items: center;
+  background-color:rgba(239, 212, 163, 0.5);
+  width: 100vw;
+  position: absolute;
+  text-align: center;
+  font-size: 100px;
+  margin-top: 42vh;
+  height: 20vh;
+  
+}
+
+@keyframes text-scroll {
+  0% {
+    -moz-transform: translatey(95%);
+    -webkit-transform: translatey(95%);
+    transform: translatey(95%);
+  }
+  50% {
+    -moz-transform: translatey(100%);
+    -webkit-transform: translatey(100%);
+    transform: translatey(100%);
+  }
+
+  100% {
+    -moz-transform: translatey(95%);
+    -webkit-transform: translatey(95%);
+    transform: translatey(95%);
+  }
+
+}
+
+.hidden{
+  display:none;
+}
+
+
+
+
+
+
