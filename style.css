@@ -1,0 +1,14 @@
+body {
+     text-align:center;
+}
+
+.grid {
+
+}
+
+button {
+     width: 100px;
+     height: 100px;
+     padding: 5px;
+     margin: 5px;
+}
