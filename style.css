@@ -1,70 +1,60 @@
 body {
-     text-align:center;
-     background-color: deepskyblue;
+  text-align: center;
+  background-color: deepskyblue;
 }
-
-
 
 button {
-     width: 100px;
-     height: 100px;
-     padding: 5px;
-     margin: 5px;
-   
-
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  margin: 5px;
 }
 
-table{
-     margin-left: auto;
-     margin-right: auto;
-     table-layout: fixed;
-     width: 100px;
+table {
+  margin-left: auto;
+  margin-right: auto;
+  table-layout: fixed;
+  width: 100px;
 }
 
-td{
-     width: 33px;
+td {
+  width: 33px;
 }
 
-
-.stats-bar{
-     
-
-   margin: auto;
-  
-  
-
+.stats-bar {
+  margin: auto;
 }
 
-ul{
-     list-style: none;
+ul {
+  list-style: none;
 }
 
-.game-button{
-     background-color: dimgray;
-     font-size: 30px;
-     color: white;
-     text-shadow: -2px 2px black;
+.game-button {
+  background-color: dimgray;
+  font-size: 30px;
+  color: white;
+  text-shadow: -2px 2px black;
 }
 
-.game-button:hover{
-     background-color: cornflowerblue;
+.game-button:hover {
+  background-color: cornflowerblue;
 }
 
-#reset{
-     height: 50px;
-     width: 100px;
-     background-color: #ff1954;
-     color: white;
-     font-size: 20px;
-     box-shadow: -2px 2px black;
+#reset {
+  height: 50px;
+  width: 100px;
+  background-color: #ff1954;
+  color: white;
+  font-size: 20px;
+  box-shadow: -2px 2px black;
 }
 
-@media (min-width: 400px){
-     body{
-          display: flex;
-          flex-direction: column;
-     }
+@media (min-width: 400px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
 }
-.grid{
-     min-width: 400px
+.grid {
+  min-width: 400px;
 }
