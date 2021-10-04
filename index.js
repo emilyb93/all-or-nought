@@ -1,11 +1,15 @@
 let currentUser = "X";
 let gameWon = false;
+let availableMoves = 9;
 
 function setPiece(btn) {
   const currentBtn = document.getElementById(btn);
   const coords = btn.split("-");
 
-  if (currentBtn.innerText === "-") {
+ 
+
+  if (currentBtn.innerText === "-" && gameWon === false) {
+    availableMoves--;
     currentBtn.innerText = currentUser;
 
     const diag1Values = Object.values(
@@ -37,31 +41,49 @@ function setPiece(btn) {
     if (gameWon === true) {
       const winningText = document.getElementById("winningText");
       winningText.innerText = `${currentUser} Wins!`;
+      updateScores(currentUser);
+    } else if (availableMoves === 0) {
+      const winningText = document.getElementById("winningText");
+      winningText.innerText = `Stalemate!`;
+
     }
 
     currentUser === "X" ? (currentUser = "O") : (currentUser = "X");
+    const currentPlayer = document.getElementById("current-player");
+    currentPlayer.innerText = currentUser;
   }
 }
 
 // reset function
 
-function resetBoard(){
-const allButtons = document.getElementsByClassName("game-button")
-console.log(allButtons)
+function resetBoard() {
+  const allButtons = document.getElementsByClassName("game-button");
+  console.log(allButtons);
 
+  for (let button of allButtons) {
+    // console.log(button)
+    button.innerText = "-";
+  }
+  gameWon = false;
 
-for (let button of allButtons){
-  // console.log(button)
-  button.innerText = "-"
+  const winningText = document.getElementById("winningText");
+  winningText.innerText = "";
+  availableMoves = 9;
 }
 
+let xScore = 0;
+let oScore = 0;
+
+function updateScores(winner) {
+  const xCount = document.getElementById("x-score");
+  const oCount = document.getElementById("o-score");
+
+  if (winner === "X") {
+    xScore++;
+  } else if (winner === "O") {
+    oScore++;
+  }
+
+  xCount.innerText = xScore;
+  oCount.innerText = oScore;
 }
-
-//loop through every row
-//reset inner text to -
-
-
-
-
-
-//track function
