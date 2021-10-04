@@ -2,11 +2,7 @@ body {
      text-align:center;
 }
 
-.grid {
-     display: grid;
-     grid-template-columns: 1fr;
-     grid-template-rows: 1fr 1fr 1fr;
-}
+
 
 button {
      width: 100px;
@@ -15,4 +11,33 @@ button {
      margin: 5px;
    
 
+}
+
+table{
+     margin-left: auto;
+     margin-right: auto;
+     table-layout: auto;
+     width: 100px;
+}
+
+td{
+     width: 33px;
+}
+
+
+.stats-bar{
+     
+
+   margin: auto;
+  
+  
+
+}
+
+ul{
+     list-style: none;
+}
+
+#reset{
+   
 }

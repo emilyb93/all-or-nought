@@ -45,4 +45,23 @@ function setPiece(btn) {
 
 // reset function
 
+function resetBoard(){
+const allButtons = document.getElementsByClassName("game-button")
+console.log(allButtons)
+
+
+for (let button of allButtons){
+  // console.log(button)
+  button.innerText = "-"
+}
+
+}
+
+//loop through every row
+//reset inner text to -
+
+
+
+
+
 //track function
