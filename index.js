@@ -42,9 +42,13 @@ function setPiece(btn) {
       }
     }
 
-    displayResult()
-    updateScores(currentUser)
-    highlightWinningSquares(winningLine, coords)
+
+    if (gameWon === true){
+
+      displayResult()
+      updateScores(currentUser)
+      highlightWinningSquares(winningLine, coords)
+    }
 
     changeCursor();
 
